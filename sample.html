@@ -5,10 +5,7 @@
     <meta charset="utf-8" />
     <title>Sample</title>
     <script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
-    <script>
-         function setEquipment(a)
-    {alert(a);}
-        </script>
+  
 </head>
 <body style="height:100%;">
     <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">
@@ -43,6 +40,16 @@ window.configurator = await api.getConfigurator();
 );
    
 </script>
-
+  <script>
+         function setEquipment(a)
+    {
+	    configurator.setConfiguration(
+    {
+    "Front Equipment": {
+        "assetId": "fb10af0f-e755-4d09-967f-515a1e5173d8"
+    },
+    
+} )
+        </script>
 </body>
 </html>
