@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>1 door outdoor</title>
+</head>
+<body style="height:100%;">
+<script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+<div id="playerContainer" style="height:600px; width:900px;"</div>
+<script>
+const authToken='8d021338-ed2b-4a25-8fb7-f9ca11c18ff0';
+const assetId='23111cfc-51cc-48e5-83e7-8a5609e5a946';
+
+window
+.threekitPlayer({
+authToken,
+el: document.getElementById('playerContainer'),
+assetId,
+intialConfiguration: {},
+showConfigurator: true,
+showAR: true,
+//display: 'image',
+})
+.then(async api =>{
+window.api=api;
+window.configurator = await api.getConfigurator();
+}
+);
+</script>
+
+</body>
+</html>
