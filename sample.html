@@ -3,10 +3,24 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>1 door outdoor</title>
+    <title>Sample</title>
+    <script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+    <script>
+         function setEquipment(var a)
+    {alert(a);}
+        </script>
 </head>
 <body style="height:100%;">
-<script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('ec909d6a-b516-4e6a-9356-cd0e6bd987da')">Drill</button>
+			<button class="mui-btn mui-btn--accent" onclick="setBorder('Grey')">Grapple</button>
+			<button class="mui-btn mui-btn--accent" onclick="setBorder('Mirror')">Pitchfork</button>
+			<button class="mui-btn mui-btn--accent" onclick="setBorder('Blur')">Trencher</button>
+			<button class="mui-btn mui-btn--accent" onclick="setBorder('White')">Shovel</button>
+			<br>
+			
+		</div>
+
 <div id="playerContainer" style="height:600px; width:900px;"</div>
 <script>
 const authToken='8d021338-ed2b-4a25-8fb7-f9ca11c18ff0';
@@ -18,7 +32,7 @@ authToken,
 el: document.getElementById('playerContainer'),
 assetId,
 intialConfiguration: {},
-showConfigurator: true,
+showConfigurator: false,
 showAR: true,
 //display: 'image',
 })
@@ -27,6 +41,7 @@ window.api=api;
 window.configurator = await api.getConfigurator();
 }
 );
+   
 </script>
 
 </body>
