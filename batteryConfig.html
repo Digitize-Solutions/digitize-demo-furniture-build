@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sample</title>
+    <script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+  <script>
+         function setEquipment(a)
+    {
+	   configurator.setConfiguration(
+    {
+    "Front Equipment": {
+        "assetId": a
+    			}
+    
+    } 
+	   )
+    }
+        </script>
+</head>
+<body style="height:100%;">
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('ec909d6a-b516-4e6a-9356-cd0e6bd987da')">Drill</button>
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('fb10af0f-e755-4d09-967f-515a1e5173d8')">Grapple</button>
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('9f1feb11-ecf5-4b5f-8ffe-a2eaa703912e')">Pitchfork</button>
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('eb38952c-ef1d-409d-9863-867565880fe4')">Trencher</button>
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('dd084a37-9dc4-463a-aeff-be2f123c5af9')">Shovel</button>
+			<br>
+			
+		</div>
+
+<div id="playerContainer" style="height:600px; width:900px;"></div>
+<script>
+const authToken='47b26e79-5c27-4500-af16-7e644f674745';
+const assetId='f99de76b-809c-4084-b0a4-8965d6e57d5c';
+console.log('hello')
+window
+.threekitPlayer({
+authToken,
+el: document.getElementById('playerContainer'),
+assetId,
+intialConfiguration: {},
+showConfigurator: false,
+showAR: true,
+//display: 'image',
+})
+.then(async api =>{
+window.api=api;
+window.configurator = await api.getConfigurator();
+}
+);
+   
+</script>
+  
+</body>
+</html>
