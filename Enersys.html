@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sample</title>
+    <script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+  <script>
+         function setEquipment(a)
+    {
+	   configurator.setConfiguration(
+    {
+    "Battery Model": {
+        "customId": a
+    			}
+    
+    } 
+	   )
+    }
+        </script>
+</head>
+<body style="height:100%;">
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('Nexsys')">Nexus</button>
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('Hawker')">Grapple</button>
+			<br>
+			
+		</div>
+
+<div id="playerContainer" style="height:600px; width:900px;"></div>
+<script>
+const authToken='ee864248-aac6-4606-97a0-6574c59fc073';
+const assetId='ea301e19-17e9-4c93-9d87-c2fd8e1168d0'; //battery Energys
+
+window
+.threekitPlayer({
+authToken,
+el: document.getElementById('playerContainer'),
+assetId,
+intialConfiguration: {},
+showConfigurator: false,
+showAR: true,
+//display: 'image',
+})
+.then(async api =>{
+window.api=api;
+window.configurator = await api.getConfigurator();
+}
+);
+   
+</script>
+  
+</body>
+</html>
