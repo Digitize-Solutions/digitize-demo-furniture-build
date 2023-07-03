@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sample</title>
+    <script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+
+    <style>
+      .containter {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .containterOptions {
+        width: 40vw;
+    display: grid;
+    grid-gap: 15px;
+    /* grid-auto-flow: dense; */
+    grid-auto-rows: min-content;
+      }
+.mui-panel{
+    width: 55%;
+    margin-left: 22%;
+    background: #efefef;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+    </style>
+    <script>
+      // function setEquipment(assetId) {
+      //   configurator.setConfiguration({
+      //     "Wi-iQ": {
+      //       assetId: assetId,
+      //     },
+      //   });
+      // }
+
+      // function setEquipment1(assetId) {
+      //   configurator.setConfiguration({
+      //     "Hawker Aquamatic": {
+      //       assetId: assetId,
+      //     },
+      //   });
+      // }
+
+      // function setEquipment2(assetId) {
+      //   configurator.setConfiguration({
+      //     Blinky: {
+      //       assetId: assetId,
+      //     },
+      //   });
+      // }
+
+      // function setEquipment3(assetId) {
+      //   configurator.setConfiguration({
+      //     "Connector Make": {
+      //       assetId: assetId,
+      //     },
+      //   });
+      // }
+
+      // function setEquipment4(assetId) {
+      //   configurator.setConfiguration({
+      //     "Connector Color": {
+      //       assetId: assetId,
+      //     },
+      //   });
+      // }
+      // function setEquipment5(assetId) {
+      //   configurator.setConfiguration({
+      //     "Tray Color": {
+      //       assetId: assetId,
+      //     },
+      //   });
+      // }
+    </script>
+  </head>
+  <body>
+    <div class="containter">
+      <div id="playerContainer" style="height: 600px; width: 60vw"></div>
+      <!-- <div class="containterOptions">
+        <div style="width: 55%; margin-left: 22%" class="mui-panel" id="parent">
+          Wi-iQ
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment('3fbed048-6b5a-42db-bbee-5219c31bd947')"
+          >
+            On
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment('788c74c3-d3b1-4c36-9545-ebbf54155e42')"
+          >
+            Off
+          </button>
+          <br />
+        </div>
+        <div style="width: 55%; margin-left: 22%" class="mui-panel" id="parent">
+          Hawker Aquamatic
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment1('a7c918f4-7280-4039-a283-7f12ac5dafec')"
+          >
+            On
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment1('6b76aa59-e22d-4605-b12f-fb66b38aea06')"
+          >
+            Off
+          </button>
+          <br />
+        </div>
+        <div style="width: 55%; margin-left: 22%" class="mui-panel" id="parent">
+          Blinky
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment2('fc45588e-4780-4856-8e2d-74a39a302802')"
+          >
+            On
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment2('2ae7e213-4713-472a-8726-ca16ecee7c3a')"
+          >
+            Off
+          </button>
+          <br />
+        </div>
+
+        <div style="width: 55%; margin-left: 22%" class="mui-panel" id="parent">
+          Connector Make
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment3('609928d4-5da4-4d53-b974-dcb1d18d0581')"
+          >
+            Anderson
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment3('5a76a1a0-0eae-4b90-aaf2-db8328238bdb')"
+          >
+            Rema
+          </button>
+          <br />
+        </div>
+        <div style="width: 55%; margin-left: 22%" class="mui-panel" id="parent">
+          Connector Color
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment4('9ede337f-02af-4075-925f-bfbcca9687f1')"
+          >
+            Yellow - 12 volt
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment4('b35217d9-b367-472e-8a6d-9d9bc2494ab7')"
+          >
+            Red - 24 volt
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment4('72132cb6-d422-42e3-8170-285df36ef170')"
+          >
+            Grey - 36 volt
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment4('7eeebb98-0009-4b45-a87c-12a176f73538')"
+          >
+            Blue - 48 volt
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment4('d379a830-8681-41c0-8cbe-250ce3d3d4a1')"
+          >
+            Green - 72 volt
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment4('83a6bad3-21e3-4ac0-817c-923a171fd04c')"
+          >
+            Black - 80 volt
+          </button>
+          <br />
+        </div>
+        <div style="width: 55%; margin-left: 22%" class="mui-panel" id="parent">
+          Tray Color
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment5('ccbe9aac-b527-4e94-92dc-11befd6917b4')"
+          >
+            Blue
+          </button>
+          <button
+            class="mui-btn mui-btn--accent"
+            onclick="setEquipment5('c5a5175e-32b7-4a5e-a299-bf890c2ec0e7')"
+          >
+            Black
+          </button>
+          <br />
+        </div> -->
+      </div>
+    </div>
+
+    <script>
+      const authToken = "ee864248-aac6-4606-97a0-6574c59fc073";
+      const assetId = "c10c1f1f-6b4f-4dfd-9c48-8769696f6207"; //battery Energys
+
+      window
+        .threekitPlayer({
+          authToken,
+          el: document.getElementById("playerContainer"),
+          assetId,
+          intialConfiguration: {},
+          showConfigurator: false,
+          showAR: true,
+          //display: 'image',
+        })
+        .then(async (api) => {
+          window.api = api;
+          window.configurator = await api.getConfigurator();
+        });
+    </script>
+  </body>
+</html>
