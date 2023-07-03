@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sample</title>
+    <script src="https://preview.threekit.com/app/js/threekit-player.js"></script>
+  <script>
+    
+    configurator.setConfiguration({
+        "Lid": {customId : 'LidOn'},
+        "Lid": {customId : 'LidOff'},
+        "Termination Point":{customId : 'terminationPointA'},
+        "Termination Point":{customId : 'terminationPointB'},
+        "Termination Point":{customId : 'terminationPointC'},
+        "Termination Point":{customId : 'terminationPointReverseA'},
+        "Can Logger": {customId : 'loggerOn'},
+        "Can Logger": {customId : 'loggerOff'},
+        "Truck IQ" : {customId : 'truckIQOn'},
+        "Truck IQ" : {customId : 'truckIQOff'},
+        "Harness Length" : {customId : '2mm'},
+        "Harness Length" : {customId : '4mm'},
+        "Connector Make" : {customId : 'rema'},
+        "Connector Make" : {customId : 'anderson'},
+        "Connector Color" : {customId: 'yellow'},
+        "Connector Color" : {customId: 'red'},
+        "Connector Color" : {customId: 'grey'},
+        "Connector Color" : {customId: 'green'},
+        "Connector Color" : {customId: 'blue'},
+        "Connector Color" : {customId: 'black'}
+})
+
+        
+    </script>
+</head>
+<body style="height:100%;">
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">Lid
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('9796fbde-edf2-4448-be76-9fa201350546')">On</button>
+			<button class="mui-btn mui-btn--accent" onclick="setEquipment('24a60936-5062-43a6-9252-bc82b7804f69')">Off</button>
+			<br>		
+	</div>
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">Termination Point
+        <button class="mui-btn mui-btn--accent" onclick="setTermination('49672393-3b95-4e28-a68f-09527200576f')">A</button>
+        <button class="mui-btn mui-btn--accent" onclick="setTermination('8d2da015-35c9-43c6-b606-5e989a1dafd1')">B</button>
+        <button class="mui-btn mui-btn--accent" onclick="setTermination('57261f72-fa1e-4d91-a45b-ae11d273bcbb')">C</button>
+        <button class="mui-btn mui-btn--accent" onclick="setTermination('b3d596f4-8cfe-4252-88e2-b20e411ef99d')">Reverse A</button>
+        <br>		
+    </div>
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">Can Logger
+        <button class="mui-btn mui-btn--accent" onclick="setLogger('62bba3f1-7167-4cc1-9782-859c3047ab6c')">On</button>
+        <button class="mui-btn mui-btn--accent" onclick="setLogger('ee9daec1-4921-450a-b269-47cae76c298d')">Off</button>
+        <br>		
+    </div>
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">Truck IQ
+        <button class="mui-btn mui-btn--accent" onclick="setTruckIQ('87c7d199-1948-4483-a8da-25d0f950084f')">On</button>
+        <button class="mui-btn mui-btn--accent" onclick="setTruckIQ('5f1e125d-1b6b-43d9-bbda-0264559c4a16')">Off</button>
+        <br>		
+    </div>
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">Harness Length
+        <button class="mui-btn mui-btn--accent" onclick="setHarnessLength('eec69baa-f027-4a81-917e-c87e05c29f8c')">2 mm</button>
+        <button class="mui-btn mui-btn--accent" onclick="setHarnessLength('d59f63a3-3fd7-4038-a338-d556637401ff')">4 mm</button>
+        <br>		
+    </div>
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">Connector Make
+        <button class="mui-btn mui-btn--accent" onclick="setConnecterMake('609928d4-5da4-4d53-b974-dcb1d18d0581')">Anderson</button>
+        <button class="mui-btn mui-btn--accent" onclick="setConnecterMake('5a76a1a0-0eae-4b90-aaf2-db8328238bdb')">Rema</button>
+        <br>
+        
+    </div>
+    <div style="width:55%; margin-left:22%" class="mui-panel" id="parent">Connector Color
+        <button class="mui-btn mui-btn--accent" onclick="setConnecterColor('9ede337f-02af-4075-925f-bfbcca9687f1')">Yellow - 12 volt</button>
+        <button class="mui-btn mui-btn--accent" onclick="setConnecterColor('b35217d9-b367-472e-8a6d-9d9bc2494ab7')">Red - 24 volt</button>
+        <button class="mui-btn mui-btn--accent" onclick="setConnecterColor('72132cb6-d422-42e3-8170-285df36ef170')">Grey - 36 volt</button>
+        <button class="mui-btn mui-btn--accent" onclick="setConnecterColor('d379a830-8681-41c0-8cbe-250ce3d3d4a1')">Green - 72 volt</button>
+        <button class="mui-btn mui-btn--accent" onclick="setConnecterColor('7eeebb98-0009-4b45-a87c-12a176f73538')">Blue - 48 volt</button>
+        <button class="mui-btn mui-btn--accent" onclick="setConnecterColor('83a6bad3-21e3-4ac0-817c-923a171fd04c')">Black - 80 volt</button>
+        <br>
+    </div>
+
+<div id="playerContainer" style="height:600px; width:900px;"></div>
+<script>
+const authToken='ee864248-aac6-4606-97a0-6574c59fc073';
+const assetId='f9a68013-a042-4ea5-9b7c-208644d1a09e'; //battery Energys
+
+window
+.threekitPlayer({
+authToken,
+el: document.getElementById('playerContainer'),
+assetId,
+intialConfiguration: {},
+showConfigurator: false,
+showAR: true,
+//display: 'image',
+})
+.then(async api =>{
+window.api=api;
+window.configurator = await api.getConfigurator();
+}
+);
+   
+</script>
+  
+</body>
+</html>
